@@ -1,9 +1,15 @@
+/*********************************************************
+* REMEMBER TO SET WORKING DIRECTORY TO PROJECT DIRECTORY!*
+* Mines will be printed to the file "cords.txt" in the   *
+* working directory                                      *
+*********************************************************/
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
 
-#define UPPER 9
-#define TW_UPPER 7
+#define UPPER 9 // Max. coordinate value
+#define TW_UPPER 7 // Max. TW value
 
 typedef struct
 {
@@ -53,7 +59,6 @@ void GenerateRandomCluster (char* filename) {
     srand(time(NULL));
 
     // Assign random values for the x- and y-coordinates in the struct
-    double n = 1/7;
     for (int i = 0; i < NumberOfMines; ++i) {
         mines[i].x = rand() % (UPPER + 1);
         mines[i].y = rand() % (UPPER + 1);
